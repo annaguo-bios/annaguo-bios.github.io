@@ -7,11 +7,11 @@ nav: true
 nav_order: 5
 ---
 
-<a href="https://www.dropbox.com/s/mcgg0qw4oy2zkb5/Semiparametric_treatsheet.pdf?dl=0">Semiparametric theory</a>. This is my reading note of the book <a href="https://link.springer.com/book/10.1007/0-387-37345-4">Semiparametric Theory and Missing Data</a> by Dr. Anastasios A. Tsiatis. A really nice book! :sparkles: :smile:<br>
-<a href="https://www.dropbox.com/s/q1xoirlupc0pvg4/causal_cheat_sheet.pdf?dl=0">Causal inference basics</a> <br>
-<a href="https://www.dropbox.com/s/nhw6h3wa2qu524g/Statistical_inference.pdf?dl=0">Statistical inference</a> (BIOS 711 taught by Dr. Eugene Huang.)<br>
-<a href="https://www.dropbox.com/s/qn6n11d07gqtskx/Advanced_linear_models.pdf?dl=0">Advanced linear models</a> (BIOS 707 taught by Dr. Anita Manatunga)<br>
-<a href="https://www.dropbox.com/s/n2bomhrl3b059kz/Applied_survival_analysis.pdf?dl=0">Applied survival analysis</a> (BIOS 522 taught by Dr. José Binongo)<br>
+<a href="/assets/Notes/Semiparametric_treatsheet.pdf">Semiparametric theory</a>. This is my reading note of the book <a href="https://link.springer.com/book/10.1007/0-387-37345-4">Semiparametric Theory and Missing Data</a> by Dr. Anastasios A. Tsiatis. A really nice book! :sparkles: :smile:<br>
+<a href="/assets/Notes/causal_cheat_sheet.pdf">Causal inference basics</a> <br>
+<a href="/assets/Notes/Statistical_inference.pdf">Statistical inference</a> (BIOS 711 taught by Dr. Eugene Huang.)<br>
+<a href="/assets/Notes/Advanced_linear_models.pdf">Advanced linear models</a> (BIOS 707 taught by Dr. Anita Manatunga)<br>
+<a href="/assets/Notes/Applied_survival_analysis.pdf">Applied survival analysis</a> (BIOS 522 taught by Dr. José Binongo)<br>
 
 
 
