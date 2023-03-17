@@ -1,7 +1,7 @@
 ---
 layout: post
-date: 2015-10-22 15:59:00-0400
+date: 2023-03-01 
 inline: true
 ---
 
-A simple inline announcement.
+My abstract <b>Missing not at random: a cross-sectional model</b> has been selected for a poster presentation at the 2023 American Causal Inference Conference (ACIC)
