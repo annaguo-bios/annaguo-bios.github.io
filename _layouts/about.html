@@ -1,70 +1,35 @@
----
-layout: default
----
-
-<!-- about.html -->
-      <div class="post">
-        <header class="post-header">
-          <h1 class="post-title">
-           {% if site.title == "blank" -%}<span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}{%- else -%}{{ site.title }}{%- endif %}
-          </h1>
-          <p class="desc">{{ page.subtitle }}</p>
-        </header>
-
-        <article>
-          {% if page.profile -%}
-          <div class="profile float-{%- if page.profile.align == 'left' -%}left{%- else -%}right{%- endif -%}">
-            {%- if page.profile.image %}
-              {%- assign profile_image_path = page.profile.image | prepend: 'assets/img/' -%}
-
-              {% if page.profile.image_circular %}
-                {%- assign profile_image_class = "img-fluid z-depth-1 rounded-circle" -%}
-              {% else %}
-                {%- assign profile_image_class = "img-fluid z-depth-1 rounded" -%}
-              {% endif %}
-
-              {% include figure.html 
-              path=profile_image_path 
-              class=profile_image_class
-              alt=page.profile.image -%}
-            {% endif -%}
-            {%- if page.profile.address %}
-            <div class="address">
-              {{ page.profile.address }}
-            </div>
-            {%- endif %}
-          </div>
-          {%- endif %}
-
-          <div class="clearfix">
-            {{ content }}
-          </div>
-
-          <!-- News -->
-          {% if page.news -%}
-            <h2><a href="{{ '/news/' | relative_url }}" style="color: inherit;">news</a></h2>
-            {%- include news.html %}
-          {%- endif %}
-
-          <!-- Selected papers -->
-          {% if page.selected_papers -%}
-            <h2><a href="{{ '/publications/' | relative_url }}" style="color: inherit;">selected publications</a></h2>
-            {%- include selected_papers.html %}
-          {%- endif %}
-
-          <!-- Social -->
-          {%- if page.social %}
-            <div class="social">
-              <div class="contact-icons">
-                {% include social.html %}
-              </div>
-
-              <div class="contact-note">
-                {{ site.contact_note }}
-              </div>
-              
-            </div>
-          {%- endif %}
-        </article>
-
-</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000}
+    p.p3 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000}
+    span.s1 {font-kerning: none}
+    span.s2 {text-decoration: underline ; font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">--- layout: default ---</span></p>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>{% if site.title == "blank" -%}{{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}{%- else -%}{{ site.title }}{%- endif %}<span class="Apple-converted-space"> </span></b></span></h1>
+<p class="p3"><span class="s1">{{ page.subtitle }}</span></p>
+<p class="p1"><span class="s1">{% if page.profile -%}</span></p>
+<p class="p1"><span class="s1">{%- if page.profile.image %} {%- assign profile_image_path = page.profile.image | prepend: 'assets/img/' -%} {% if page.profile.image_circular %} {%- assign profile_image_class = "img-fluid z-depth-1 rounded-circle" -%} {% else %} {%- assign profile_image_class = "img-fluid z-depth-1 rounded" -%} {% endif %} {% include figure.html path=profile_image_path class=profile_image_class alt=page.profile.image -%} {% endif -%} {%- if page.profile.address %}</span></p>
+<p class="p1"><span class="s1">{{ page.profile.address }}<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">{%- endif %}<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">{%- endif %}</span></p>
+<p class="p1"><span class="s1">{{ content }}<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">{% if page.news -%}</span></p>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s2"><a href="file:///Users/apple/Documents/PS/annaguo-bios.github.io/_layouts/%7B%7B%20'/news/'%20%7C%20relative_url%20%7D%7D"><b>News</b></a></span></h2>
+<p class="p1"><span class="s1">{%- include news.html %} {%- endif %} {% if page.selected_papers -%}</span></p>
+<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s2"><a href="file:///Users/apple/Documents/PS/annaguo-bios.github.io/_layouts/%7B%7B%20'/publications/'%20%7C%20relative_url%20%7D%7D"><b>Selected publications</b></a></span></h2>
+<p class="p1"><span class="s1">{%- include selected_papers.html %} {%- endif %} {%- if page.social %}</span></p>
+<p class="p1"><span class="s1">{% include social.html %}<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">{{ site.contact_note }}<span class="Apple-converted-space"> </span></span></p>
+<p class="p1"><span class="s1">{%- endif %}<span class="Apple-converted-space"> </span></span></p>
+</body>
+</html>
