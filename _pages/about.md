@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: <a href='https://www.emory.edu/home/index.html'>Emory University</a>
+subtitle: <a href='https://scholar.google.com/citations?user=9sUhi8MAAAAJ&hl=en&oi=ao'>Google Scholar</a>
 
 profile:
   align: right
