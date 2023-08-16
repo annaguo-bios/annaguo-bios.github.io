@@ -4,6 +4,6 @@ permalink: /cv/
 title: CV
 nav: true
 nav_order: 6
-permalink: /assets/pdf/example_pdf.pdf
+permalink: /assets/pdf/Resume_Anna.pdf
 ---
 
