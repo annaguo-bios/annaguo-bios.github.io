@@ -16,20 +16,17 @@ toc:
 
 # Tutorial on submitting parallel jobs on HPC
 
-**Toy Task:** I'd like to numerically evaluate the <u>Central Limit Theorem</u>: suppose $$\{X_1,X_2,\dots,X_n\}$$ is a sequence of i.i.d. random variables with $$E(X_i)=\mu$$ and $$Var(X_i)=\sigma^2 <\infty$$ then as $n\rightarrow\infty$, $$\bar{X}\rightarrow N(\mu,\frac{\sigma^2}{n})$$
+**Toy Task:** I'd like to numerically evaluate the central limit theorem.
+
+<u>Central Limit Theorem</u>: suppose $$\{X_1,X_2,\dots,X_n\}$$ is a sequence of i.i.d. random variables with $$E(X_i)=\mu$$ and $$Var(X_i)=\sigma^2 <\infty$$ then as $n\rightarrow\infty$, $$\bar{X}\rightarrow N(\mu,\frac{\sigma^2}{n})$$
 
 
 
-## Write a R function that perform the task
+### Write a R function that perform the task
 
 Create a R script, named `task.R` that simulate $X$ with my specified sample size and seed, and output the sample mean of the simulated $X$ values.
 
 The following code takes two command-line arguments `n` and `seed` and output the sample mean to a Rdata file.
-
-```c++
-code code code
-  
-```
 
 ```R
 args = commandArgs(trailingOnly=T)
@@ -77,7 +74,7 @@ It will produce a file named `output_100_10.Rdata` .
 
 
 
-## Generate the jobs
+### Generate the jobs
 
 We want to execute the `task.R` script for different sample sizes: 250, 500, 1000, 2000, and 4000. For each sample size, we intend to run `task.R` 1000 times by setting seeds from 1 to 1000.
 
@@ -102,7 +99,9 @@ for (i in seq_along(n.vec)){
 
 Usually, we don't want to submit too many jobs at a time, so I split the jobs into 5 files, named *joblist_n250.txt, joblist_n500.txt, joblist_n1000.txt, joblist_n2000.txt, joblist_n4000.txt*.
 
-## Submit parallel jobs
+
+
+### Submit parallel jobs
 
 Personally I prefer to submit parallel jobs with the help of [dSQ](https://github.com/ycrc/dSQ) command. 
 
@@ -164,7 +163,9 @@ for i in $(seq 1 5); do
 done
 ```
 
-## Organize the results
+
+
+### Organize the results
 
 Finally, we are ready to organize the results. This step varies based on your task. In this toy example, I'd like to plot the distribution of sample mean over different sample sizes. The following R code does the job.
 
