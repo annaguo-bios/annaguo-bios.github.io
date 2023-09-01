@@ -9,7 +9,6 @@ giscus_comments: true
 related_posts: false
 toc:
   sidebar: left
-
 ---
 
 
@@ -135,7 +134,7 @@ done
 
 for i in $(seq 1 5); do
 # add "python" at the last line
-sed -i 's@/home/aguo28/dSQ-master/dSQBatch.py@python /home/aguo28/dSQ-master/dSQBatch.py@' joblist_n$i.sh
+sed -i 's@/path/to/the/file/dSQBatch.py@python /path/to/the/file/dSQBatch.py@' joblist_n$i.sh
 
 # add email and packages
 sed -i '/#SBATCH --mail-type "ALL"/a #SBATCH --mail-user=your-email@xxx.edu\nmodule load python/3.8\nmodule load R/4.2.2' joblist_n$i.sh
