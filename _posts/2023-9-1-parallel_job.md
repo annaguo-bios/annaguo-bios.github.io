@@ -13,19 +13,19 @@ toc:
 
 
 
-# Tutorial on submitting parallel jobs on HPC
-
-**Toy Task:** I'd like to numerically evaluate the central limit theorem.
-
-<u>Central Limit Theorem</u>: suppose $$\{X_1,X_2,\dots,X_n\}$$ is a sequence of i.i.d. random variables with $$E(X_i)=\mu$$ and $$Var(X_i)=\sigma^2 <\infty$$ then as $n\rightarrow\infty$, $$\bar{X}\rightarrow N(\mu,\frac{\sigma^2}{n})$$
+> The workflow discussed in this post is particularly suited for scenarios in which you need to execute similar code multiple times, with each execution having a substantial time requirement. In each iteration, the code exhibits minor variations in specific input parameters. Then this is when the *parallel* computing comes into play.
 
 
+
+**Toy Task:** Suppose I'd like to numerically evaluate the central limit theorem.
+
+<u>Central Limit Theorem</u>: suppose $$\{X_1,X_2,\dots,X_n\}$$ is a sequence of i.i.d. random variables with $$E(X_i)=\mu$$ and $$Var(X_i)=\sigma^2 <\infty$$ then as $$n\rightarrow\infty$$, $$\bar{X}\rightarrow N(\mu,\frac{\sigma^2}{n})$$
 
 
 
 ### Write a R function that perform the task
 
-Create a R script, named `task.R` that simulate $X$ with my specified sample size and seed, and output the sample mean of the simulated $X$ values.
+Create a R script, named `task.R` that simulate $$X$$ with my specified sample size and seed, and output the sample mean of the simulated $$X$$ values.
 
 The following code takes two command-line arguments `n` and `seed` and output the sample mean to a Rdata file.
 
