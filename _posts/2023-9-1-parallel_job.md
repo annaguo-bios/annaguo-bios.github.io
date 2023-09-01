@@ -21,6 +21,8 @@ toc:
 
 
 
+
+
 ### Write a R function that perform the task
 
 Create a R script, named `task.R` that simulate $X$ with my specified sample size and seed, and output the sample mean of the simulated $X$ values.
