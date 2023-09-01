@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Criss-cross missing data model
-description: Identifiability and Estimation under Missing Not at Random Mechanisms
+description: Provide sufficient conditions for identification and conduct semiparametric estimation
 img: assets/img/criss.jpg
 importance: 1
 category: missing data
