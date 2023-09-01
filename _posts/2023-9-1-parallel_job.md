@@ -7,6 +7,8 @@ tags: code
 categories: code
 giscus_comments: true
 related_posts: false
+toc:
+  sidebar: left
 
 ---
 
@@ -14,7 +16,7 @@ related_posts: false
 
 # Tutorial on submitting parallel jobs on HPC
 
-**Toy Task:** I'd like to numerically evaluate the <u>Central Limit Theorem</u>: suppose $\{X_1,X_2,\dots,X_n\}$ is a sequence of i.i.d. random variables with $E(X_i)=\mu$ and $Var(X_i)=\sigma^2 <\infty$ then as $n\rightarrow\infty$, $\bar{X}\rightarrow N(\mu,\frac{\sigma^2}{n})$
+**Toy Task:** I'd like to numerically evaluate the <u>Central Limit Theorem</u>: suppose $$\{X_1,X_2,\dots,X_n\}$$ is a sequence of i.i.d. random variables with $$E(X_i)=\mu$$ and $$Var(X_i)=\sigma^2 <\infty$$ then as $n\rightarrow\infty$, $$\bar{X}\rightarrow N(\mu,\frac{\sigma^2}{n})$$
 
 
 
@@ -23,6 +25,11 @@ related_posts: false
 Create a R script, named `task.R` that simulate $X$ with my specified sample size and seed, and output the sample mean of the simulated $X$ values.
 
 The following code takes two command-line arguments `n` and `seed` and output the sample mean to a Rdata file.
+
+```c++
+code code code
+  
+```
 
 ```R
 args = commandArgs(trailingOnly=T)
@@ -40,6 +47,8 @@ E.x <- mean(x)
 # save the output
 save(list = c("E.x"),file = paste0("output_",n,"_",seed,".Rdata"))
 ```
+
+
 
 ***Note:*** How to create the *task.R* file in linux?
 
