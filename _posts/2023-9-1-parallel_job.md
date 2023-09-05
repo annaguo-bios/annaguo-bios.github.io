@@ -171,13 +171,9 @@ done
 ### Organize the results
 
 Finally, we are ready to organize the results. This step varies based on your task. In this toy example, we'd like to verify:
-
-\begin{equation}
-
+$$
 \sqrt{n}(\bar{X}-0)\rightarrow N(0,1)
-
-\end{equation}
-
+$$
 Therefore, I'll plot the kernel density estimate of $$\bar{X}$$ for each sample size, and compare them with the standard normal distribution $$N(0,1)$$
 
  The following R code does the job.
