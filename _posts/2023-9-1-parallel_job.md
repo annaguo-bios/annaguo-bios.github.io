@@ -91,7 +91,7 @@ nsim <- 1000
 for (i in seq_along(n.vec)){
   joblist <- c()
   for (t in 1:nsim){
-    job <- paste0("Rscript parallel_main.R ",n.vec[i]," ",t)
+    job <- paste0("Rscript task.R ",n.vec[i]," ",t)
     joblist <- c(joblist,job)
   }
   write.table(joblist, file = paste0("joblist_n",i,".txt"),quote = F, col.names = F, row.names = F)
@@ -109,12 +109,14 @@ Personally I prefer to submit parallel jobs with the help of [dSQ](https://githu
 - download dSQ (you will need to install git command first if it's not already installed).
 
 ```shell
+# Download dSQ
 git clone https://github.com/ycrc/dSQ
+
+# Define the path to the dSQ folder
+dsq_path="/path/to/my/dSQdirectory"
 ```
 
 - Generate bash jobs
-
-You shall be able to find the `dSQ.py` file from the dSQ directory.
 
 ```shell
 module load python/3.8
@@ -123,11 +125,11 @@ module load R/4.2.2
 # This is step1_dsq.sh
 ##########################
 for i in $(seq 1 5); do
-python /path/to/the/file/dSQ.py --job-file joblist_n$i.txt --batch-file joblist_n$i.sh --job-name n$i --mail-type ALL
+python "$dsq_path/dSQ.py" --job-file joblist_n$i.txt --batch-file joblist_n$i.sh --job-name n$i --mail-type ALL
 done
 ```
 
-- Modify the bash jobs to contain email and partition information
+- Modify the bash jobs to contain email and partition information. Change the partition name as need. I'm using the `day-long-cpu` partition here.
 
 ```shell
 ##########################
@@ -136,7 +138,7 @@ done
 
 for i in $(seq 1 5); do
 # add "python" at the last line
-sed -i 's@/path/to/the/file/dSQBatch.py@python /path/to/the/file/dSQBatch.py@' joblist_n$i.sh
+sed -i 's@'"$dsq_path"'/dSQBatch.py@python '"$dsq_path"'/dSQBatch.py@' "joblist_n$i.sh"
 
 # add email and packages
 sed -i '/#SBATCH --mail-type "ALL"/a #SBATCH --mail-user=your-email@xxx.edu\nmodule load python/3.8\nmodule load R/4.2.2' joblist_n$i.sh
@@ -168,10 +170,22 @@ done
 
 ### Organize the results
 
-Finally, we are ready to organize the results. This step varies based on your task. In this toy example, I'd like to plot the distribution of sample mean over different sample sizes. The following R code does the job.
+Finally, we are ready to organize the results. This step varies based on your task. In this toy example, we'd like to verify:
+
+\begin{equation}
+
+\sqrt{n}(\bar{X}-0)\rightarrow N(0,1)
+
+\end{equation}
+
+Therefore, I'll plot the kernel density estimate of $$\bar{X}$$ for each sample size, and compare them with the standard normal distribution $$N(0,1)$$
+
+ The following R code does the job.
 
 ```R
 library(ggplot2)
+library(dplyr)
+library(latex2exp)
 
 # sample size
 n.vec <- c(250,500,1000,2000,4000)
@@ -192,21 +206,42 @@ for (i in seq_along(n.vec)){
     load(paste0("output_",n,"_",t,".Rdata"))
     
     # record bias
-    mean_matrix[t,i] <- bias_Y1
+    mean_matrix[t,i] <- E.x
     
     }
   }
 
 # plot the result with boxplot
 dt <- data.frame(n=rep(n.vec, each=nsim), value=c(mean_matrix)) %>% mutate(n.value=sqrt(n)*value)
-  p.box <- ggplot(dt, aes(factor(n), n.value)) + 
-    geom_boxplot(position = position_dodge(width = 0.9))+ 
-    theme_bw() +
-    geom_hline(yintercept=0, linetype="dashed")+
-    stat_summary(fun = median, geom = "path",mapping = aes(group = -1))+
-    labs(x="Sample size n",y=yaxis_boxplot)
+
+######################
+  # density plot
+######################
+  
+  p.den <- ggplot(dt, aes(x=n.value, color=factor(n))) + 
+    geom_density(key_glyph = draw_key_path)+
+    theme_bw()+
+    xlab(TeX(r'($\sqrt{n}E(X)$)')) + 
+    ylab("Density")+
+    theme(legend.position = c(.95, .95),
+          legend.justification = c("right", "top"))+
+    guides(color = guide_legend(title = "Sample size"))
+  
+
+  # Overlay a single normal curve
+  p.den <- p.den +
+    stat_function(
+      fun = dnorm,
+      args = list(mean = 0, sd = 1),
+      linetype = "dashed",
+      color = "black",
+      size = 1
+    )
 
 # Save the ggplot visualization to a PNG file
-ggsave(file = "plot.png", plot = p, device = "png", width = 6, height = 4, dpi = 300)
+ggsave(filename = "dens_plot.png", plot = p.den, device = "png", width = 6, height = 4, dpi = 300)
 ```
 
+The resulting plot:
+
+![dens_plot](/Users/apple/Documents/PS/annaguo-bios.github.io/assets/img/dens_plot.png)
