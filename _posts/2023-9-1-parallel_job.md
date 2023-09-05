@@ -244,4 +244,4 @@ ggsave(filename = "dens_plot.png", plot = p.den, device = "png", width = 6, heig
 
 The resulting plot:
 
-![dens_plot](/Users/apple/Documents/PS/annaguo-bios.github.io/assets/img/dens_plot.png)
+{% include figure.html path="assets/img/dens_plot.png" class="img-fluid rounded z-depth-1" zoomable=true %}
