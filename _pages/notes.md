@@ -13,5 +13,6 @@ nav_order: 5
 <a href="/assets/Notes/Advanced_linear_models.pdf">Advanced linear models</a> (BIOS 707 taught by Dr. Anita Manatunga)<br>
 <a href="/assets/Notes/Applied_survival_analysis.pdf">Applied survival analysis</a> (BIOS 522 taught by Dr. José Binongo)<br>
 
+<a href="/assets/Notes/Statistics___Probability_Cheatsheet.pdf">Cheatsheet on Statistics and Probability</a> (BIOS 760R taught by Dr. Razieh Nabi)<br>
 
 
