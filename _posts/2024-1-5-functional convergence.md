@@ -94,3 +94,4 @@ Taking $G=\delta_x$, where $\delta_x$ is the distribution function taking point 
 $$
 I C(x ; F, T)=\phi_F(x).
 $$
+This function has played an important role in the theory of robust estimation, due to work by F. Hampel (1968, 1974) who observed that for large $n$, $\phi_F(x)$ measures the effect on $T_n$ of a single additional observation with value $x$. The influence curve also provides asymptotic variance when $T_n$ is asymptotically normal. The properties of the influence curve are discussed at length in Hampel (1974). 
