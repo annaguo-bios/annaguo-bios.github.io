@@ -17,7 +17,7 @@ toc:
 
 
 
-## von Mise expansion
+### von Mise expansion
 
 A statistic can be considered as a function $$T(\cdot)$$ of distribution function $$F$$ as $$T(F)$$, where $$T:{\mathcal{F}}\longmapsto {\mathsf{R}}$$ is a mapping from a collection of distribution functions to the real line, and $$F\in\mathcal{F}$$. This function $$T$$ is refered to as the _statistical functional_. For example, the mean of a distribution can be considered as a statistical functional of the form
 $$
@@ -73,7 +73,7 @@ The central idea of von Mise expansion is to approximate non-linear statistical 
 
 Two questions arise (1) how is the functional derivative $$T^{\prime}_F$$ defined, and how is the von Mise expansion established? (2) what conditions are needed to ensure the convergence of the remainder term? To the first question, let's first define von Mises derivative
 
-> Let $$X_1, X_2,\cdots X_n$$ be an i.i.d sample. Let $$T$$ be a statistical functional defined on a convex set $$\mathcal{F}$$ of distribution functions, which contains all empricial distribution functions and the population distribution function $$F$$. Let $$G\in\mathcal{F}$$. Then the von Mises derivative $$T^{\prime}_F$$ of $$T$$ at $$F$$ is defined by
+> Let $$X_1, X_2,\cdots X_n$$ be an i.i.d sample. Let $$T$$ be a statistical functional defined on a convex set $$\mathcal{F}$$ of distribution functions, which contains all empricial distribution functions and the population distribution function $$F$$. Let $$G\in\mathcal{F}$$. Then the **von Mises derivative** $$T^{\prime}_F$$ of $$T$$ at $$F$$ is defined by
 > $$
 > \begin{align}
 > T_F^{\prime}(G-F)=\left.\frac{d}{d t} T(F+t(G-F))\right|_{t=0}
@@ -120,12 +120,14 @@ $$
 A(1)=T(G)=T(F)+T_F^{\prime}(G-F)+\operatorname{Rem}(G-F)
 \end{align}
 $$
+
+
 For $$G=F_n$$, the expansion becomes
 $$
 \begin{align}
-T(F_n)&=T(F)+T^{\prime}(F_n-F)+\operatorname{Rem}(F_n-F)\\
+T(F_n)&=T(F)+T^{\prime}(F_n-F)+\operatorname{Rem}(F_n-F)\\\notag
 &=T(F)+\int\phi_F(x)d(F_n-F)(x)+\operatorname{Rem}(F_n-F)\\
-&=T(F)+\int\phi_F(x)dF_n(x)+\operatorname{Rem}(F_n-F).
+&=T(F)+\int\phi_F(x)dF_n(x)+\operatorname{Rem}(F_n-F).\notag
 \end{align}
 $$
 The second term in the expansion is linear
@@ -150,7 +152,7 @@ Proceed to the second question about conditions required for \eqref{eq:rem}. Not
 
 Let's first establish a general form of differentiation and then restrict this to the form we wish to use. 
 
-> Let $$V$$ and $$W$$ be topological vector spaces and let $$L(V,W)$$ be the set of continuous linear transformations from $$V$$ to $$W$$. Let $$\mathcal{S}$$ be a class of subsets of $$V$$ such that every subset consisting of a single point belongs to $$\mathcal{S}$$ and let $$\mathcal{A}$$ be an open subset of $$V$$. A function $$T:\mathcal{A}\rightarrow W$$ is $$\mathcal{S}$$-differentiable at $$F\in\mathcal{A}$$ if there exists $$T^{\prime}_F\in L(V,W)$$ such that for any $$K\in\mathcal{S}$$ 
+> Let $$V$$ and $$W$$ be topological vector spaces and let $$L(V,W)$$ be the set of continuous linear transformations from $$V$$ to $$W$$. Let $$\mathcal{S}$$ be a class of subsets of $$V$$ such that every subset consisting of a single point belongs to $$\mathcal{S}$$ and let $$\mathcal{A}$$ be an open subset of $$V$$. A function $$T:\mathcal{A}\rightarrow W$$ is **$$\mathcal{S}$$-differentiable** at $$F\in\mathcal{A}$$ if there exists $$T^{\prime}_F\in L(V,W)$$ such that for any $$K\in\mathcal{S}$$ 
 > $$
 > \begin{align}
 > \lim _{t \rightarrow 0} \frac{T(F+t H)-T(F)-T_F^{\prime}(t H)}{t}=0
@@ -168,5 +170,7 @@ From the definition, it immediately follows that Frechet differentiability impli
 
 
 
-## *Glivenko-Cantelli* condition and Donsker condition
+### Glivenko-Cantelli condition and Donsker condition
+
+
 
