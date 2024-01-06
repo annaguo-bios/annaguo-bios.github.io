@@ -122,11 +122,11 @@ A(1)=T(G)=T(F)+T_F^{\prime}(G-F)+\operatorname{Rem}(G-F)
 $$
 For $$G=F_n$$, the expansion becomes
 $$
-\begin{align*}
+\begin{align}
 T(F_n)&=T(F)+T^{\prime}(F_n-F)+\operatorname{Rem}(F_n-F)\\
 &=T(F)+\int\phi_F(x)d(F_n-F)(x)+\operatorname{Rem}(F_n-F)\\
 &=T(F)+\int\phi_F(x)dF_n(x)+\operatorname{Rem}(F_n-F).
-\end{align*}
+\end{align}
 $$
 The second term in the expansion is linear
 $$
