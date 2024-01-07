@@ -151,9 +151,9 @@ $$
 
 For $$G=F_n$$, the expansion becomes
 $$
-\begin{align}
+\begin{align}\label{eq:expansion}
 T(F_n)&=T(F)+T^{\prime}(F_n-F)+\operatorname{Rem}(F_n-F)\\\notag
-&=T(F)+\int\phi_F(x)d(F_n-F)(x)+\operatorname{Rem}(F_n-F)\\\label{eq:expansion}
+&=T(F)+\int\phi_F(x)d(F_n-F)(x)+\operatorname{Rem}(F_n-F)\\
 &=T(F)+\int\phi_F(x)dF_n(x)+\operatorname{Rem}(F_n-F).\notag
 \end{align}
 $$
@@ -326,7 +326,7 @@ T(\hat{Q})-T(P)= P_n \phi_P-P_n \phi_{\hat{Q}}+\left(P_n-P\right)\{\phi_{\hat{Q}
 $$
 
 
-Here $$\phi_P$$ is introduced using the property of the influence curve as in \eqref{eq:ic}. The first term ($$P_n \phi_P$$) is a sample average of mean zero i.i.d. terms and thus enjoys standard $$n^{1/2}$$ asymptotic behavior.  The third term converges to a gaussian process if $$\{\phi_{\hat{Q}}-\phi_{P}\}$$ is P-Donsker. If the second term ($$P_n \phi_{\hat{Q}}$$) also possess $$n^{1/2}$$ asymptotic behavior (for example, for those yield by [TMLE estimators](https://link.springer.com/book/10.1007/978-1-4419-9782-1) ), then the estimator $$T(\hat{Q})$$ only yields a second-order bias quantified by the remainder term $$\operatorname{Rem}(\hat{Q}-P).$$
+Here $$\phi_P$$ is introduced using the property of the influence curve as in \eqref{eq:ic}. The first term ($$P_n \phi_P$$) is a sample average of mean zero i.i.d. terms and thus enjoys standard $$n^{1/2}$$ asymptotic behavior.  The third term converges to a gaussian process if $$\{\phi_{\hat{Q}}-\phi_{P}\}$$ is P-Donsker. If the second term ($$P_n \phi_{\hat{Q}}$$) also exihibts $$n^{1/2}$$ asymptotic behavior (as is the case with [TMLE estimators](https://link.springer.com/book/10.1007/978-1-4419-9782-1) ), then the estimator $$T(\hat{Q})$$ has only a second-order bias quantified by the remainder term $$\operatorname{Rem}(\hat{Q}-P).$$
 
 
 
