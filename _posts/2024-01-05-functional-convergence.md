@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A brief overview of von Mise expansion and Donsker class 
+title: A light touch on von Mise expansion and Donsker class 
 date: 2024-01-4 09:56:00-0400
 description: a reading note (attempted summary) of Fernholz (1983) and Kosorok (2008)
 tags: learning
@@ -13,7 +13,7 @@ toc:
 
 
 
-> I was trying to figure out how von Mise expansion and the Donsker condition helps with establishing the asymptotic results of statistical estimators. For this purpose, I turned to two wonderful books "‘von Mises Calculus for Statistical Functionals" by Fernholz and "Introduction to Empirical Processes and Semiparametric Inference" by Kosorok. This post is my attempted summary of some contents from those books.
+> The terms "von Mise expansion" and "Donsker" appear quite often in estimation problem. I was trying to figure out what they are and how they help with establishing the asymptotic results of statistical estimators. For this purpose, I turned to two wonderful books "‘von Mises Calculus for Statistical Functionals" by Fernholz and "Introduction to Empirical Processes and Semiparametric Inference" by Kosorok. This post is my attempted summary of some contents from those books. I also refered to the review paper by Edward H. Kennedy (2022), which offers a great overall picture of the efficiancy theory.
 
 
 
@@ -336,5 +336,6 @@ Here $$\phi_P$$ is introduced using the property of the influence curve as in \e
 
 1. Fernholz, Luisa Turrin. *Von Mises calculus for statistical functionals*. Vol. 19. Springer Science & Business Media, 2012.
 2. Kosorok, Michael R. *Introduction to empirical processes and semiparametric inference*. Vol. 61. New York: Springer, 2008.
-3. Lecture notes of [STAT 620](https://zhangxiany-tamu.github.io/downloads/620sp22/Apr-14.pdf) by Xianyang Zhang.
-4. Lecture notes of [STAT 512: Statistical Inference](https://faculty.washington.edu/yenchic/20A_stat512/Lec10_functional.pdf) by Yen-Chi Chen.
+3. Kennedy, Edward H. "Semiparametric doubly robust targeted double machine learning: a review." *arXiv preprint arXiv:2203.06469* (2022).
+4. Lecture notes of [STAT 620](https://zhangxiany-tamu.github.io/downloads/620sp22/Apr-14.pdf) by Xianyang Zhang.
+5. Lecture notes of [STAT 512: Statistical Inference](https://faculty.washington.edu/yenchic/20A_stat512/Lec10_functional.pdf) by Yen-Chi Chen.

@@ -43,3 +43,27 @@ Results: Gender gaps in housework hours increased during and persisted after the
 Conclusion: Our results highlight that gender and resources can interact, putting women in a vulnerable position when a pandemic strikes, especially among less-resourced households.},
 selected={true}
 }
+
+@article{guo2023sufficient,
+  title={Sufficient Identification Conditions and Semiparametric Estimation under Missing Not at Random Mechanisms},
+  author={Guo, Anna and Zhao, Jiwei and Nabi, Razieh},
+  journal={Uncertainty in Artificial Intelligence},
+  year={2023},
+abstract = {Conducting valid statistical analyses is challenging in the presence of missing-not-at-random (MNAR) data, where the missingness mechanism is dependent on the missing values themselves even conditioned on the observed data. Here, we consider a MNAR model that generalizes several prior popular MNAR models in two ways: first, it is less restrictive in terms of statistical independence assumptions imposed on the underlying joint data distribution, and second, it allows for all variables in the observed sample to have missing values. This MNAR model corresponds to a so-called criss-cross structure considered in the literature on graphical models of missing data that prevents nonparametric identification of the entire missing data model. Nonetheless, part of the complete-data distribution remains nonparametrically identifiable. By exploiting this fact and considering a rich class of exponential family distributions, we establish sufficient conditions for identification of the complete-data distribution as well as the entire missingness mechanism. We then propose methods for testing the independence restrictions encoded in such models using odds ratio as our parameter of interest. We adopt two semiparametric approaches for estimating the odds ratio parameter and establish the corresponding asymptotic theories: one involves maximizing a conditional likelihood with order statistics and the other uses estimating equations. The utility of our methods is illustrated via simulation studies.},
+selected={true},
+url={https://proceedings.mlr.press/v216/guo23a.html},
+pdf={2023_Guo_MNAR.pdf},
+poster={2023_Guo_MNAR_poster.pdf}
+}
+
+@article{guo2023targeted,
+  title={Targeted Machine Learning for Average Causal Effect Estimation Using the Front-Door Functional},
+  author={Guo, Anna and Benkeser, David and Nabi, Razieh},
+  journal={arXiv preprint arXiv:2312.10234},
+  year={2023},
+abstract = {CEvaluating the average causal effect (ACE) of a treatment on an outcome often involves overcoming the challenges posed by confounding factors in observational studies. A traditional approach uses the back-door criterion, seeking adjustment sets to block confounding paths between treatment and outcome. However, this method struggles with unmeasured confounders. As an alternative, the front-door criterion offers a solution, even in the presence of unmeasured confounders between treatment and outcome. This method relies on identifying mediators that are not directly affected by these confounders and that completely mediate the treatment's effect. Here, we introduce novel estimation strategies for the front-door criterion based on the targeted minimum loss-based estimation theory. Our estimators work across diverse scenarios, handling binary, continuous, and multivariate mediators. They leverage data-adaptive machine learning algorithms, minimizing assumptions and ensuring key statistical properties like asymptotic linearity, double-robustness, efficiency, and valid estimates within the target parameter space. We establish conditions under which the nuisance functional estimations ensure the root n-consistency of ACE estimators. Our numerical experiments show the favorable finite sample performance of the proposed estimators. We demonstrate the applicability of these estimators to analyze the effect of early stage academic performance on future yearly income using data from the Finnish Social Science Data Archive.},
+selected={true},
+url={https://arxiv.org/abs/2312.10234},
+pdf={2023_Guo_TMLE.pdf},
+poster={2023_Guo_TMLE_poster.pdf}
+}
