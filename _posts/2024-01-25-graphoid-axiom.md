@@ -21,10 +21,9 @@ $$\begin{align}
   X \perp Y \mid Z & \Leftrightarrow p(X, Y \mid Z)=p(X \mid Z) p(Y \mid Z) \\ & \Leftrightarrow p(Y \mid Z) p(X \mid Z)=p(Y, X \mid Z) \\ & \Leftrightarrow Y \perp X \mid Z 
 \end{align}$$
 </details>
+<br>
 
-
-
-
+<br>
 
 **Decomposition:** $$X \perp Y, W \mid Z  \implies X \perp Y \mid Z \  \text{and} \ X \perp W \mid Z.$$
 
@@ -39,9 +38,9 @@ $$\begin{align}
   X \perp Y, W \mid Z & \Leftrightarrow p(X, Y, W \mid Z)=p(X \mid Z) p(Y, W \mid Z) \\ & \Leftrightarrow p(Y \mid X, W, Z) p(X, W \mid Z)=p(X \mid Z) p(W \mid Z) p(Y \mid W, Z) \\ &\Rightarrow \sum_{Y} p(Y \mid X, W, Z) p(X, W \mid Z)=\sum_{Y} p(X \mid Z) p(W \mid Z) p(Y \mid W, Z) \\ &\Leftrightarrow p(X, W \mid Z)=p(X \mid Z) p(W \mid Z)\\ & \Leftrightarrow X \perp W \mid Z 
   \end{align}$$
 </details>
+<br>
 
-
-
+<br>
 
 **Weak union:** $$X \perp Y, W \mid Z  \implies X \perp Y \mid W, Z. $$
 
@@ -52,9 +51,9 @@ $$\begin{align}
   X \perp Y, W \mid Z & \Leftrightarrow p(X, Y, W \mid Z)=p(X \mid Z) p(Y, W \mid Z) \\ & \Leftrightarrow p(X, Y \mid W, Z) p(W \mid Z)=p(X \mid Z) p(Y \mid W, Z) p(W\mid Z) \\ & \Leftrightarrow p(X, Y \mid W, Z)=p(X \mid Z) p(Y \mid W, Z) \\ \text{Based on (ii)} & \Rightarrow p(X, Y \mid W, Z)=p(X \mid Z, W) p(Y \mid W, Z) \\ & \Leftrightarrow X \perp Y \mid W, Z 
   \end{align}$$
 </details>
+<br>
 
-
-
+<br>
 
 **Contraction:** $$X \perp Y \mid Z \  \text{and} \ X \perp W \mid Y, Z \implies X \perp Y, W \mid Z.$$
 
@@ -70,9 +69,9 @@ $$\begin{align}
 	\end{align}
 	$$
 </details>
+<br>
 
-
-
+<br>
 
 **Intersection:** $$X \perp Y \mid W, Z \  \text{and} \ X \perp W \mid Y, Z \implies X \perp Y, W \mid Z.$$  (Holds under strictly positive distributions)
 
