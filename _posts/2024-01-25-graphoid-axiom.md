@@ -24,6 +24,8 @@ $$\begin{align}
 
 
 
+
+
 **Decomposition:** $$X \perp Y, W \mid Z  \implies X \perp Y \mid Z \  \text{and} \ X \perp W \mid Z.$$
 
 <details>
@@ -39,6 +41,8 @@ $$\begin{align}
 </details>
 
 
+
+
 **Weak union:** $$X \perp Y, W \mid Z  \implies X \perp Y \mid W, Z. $$
 
 <details>
@@ -48,6 +52,8 @@ $$\begin{align}
   X \perp Y, W \mid Z & \Leftrightarrow p(X, Y, W \mid Z)=p(X \mid Z) p(Y, W \mid Z) \\ & \Leftrightarrow p(X, Y \mid W, Z) p(W \mid Z)=p(X \mid Z) p(Y \mid W, Z) p(W\mid Z) \\ & \Leftrightarrow p(X, Y \mid W, Z)=p(X \mid Z) p(Y \mid W, Z) \\ \text{Based on (ii)} & \Rightarrow p(X, Y \mid W, Z)=p(X \mid Z, W) p(Y \mid W, Z) \\ & \Leftrightarrow X \perp Y \mid W, Z 
   \end{align}$$
 </details>
+
+
 
 
 **Contraction:** $$X \perp Y \mid Z \  \text{and} \ X \perp W \mid Y, Z \implies X \perp Y, W \mid Z.$$
@@ -64,6 +70,8 @@ $$\begin{align}
 	\end{align}
 	$$
 </details>
+
+
 
 
 **Intersection:** $$X \perp Y \mid W, Z \  \text{and} \ X \perp W \mid Y, Z \implies X \perp Y, W \mid Z.$$  (Holds under strictly positive distributions)
