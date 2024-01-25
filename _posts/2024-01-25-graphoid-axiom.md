@@ -10,9 +10,10 @@ related_posts: false
 
 >Given three disjoint subsets $$X, Y, Z$$, prove that the following relations hold:
 
+
+
 **Symmetry:** $$X \perp Y \mid Z  \implies Y \perp X \mid Z.$$
 
-```
 <details>
 <summary>Proof</summary>
 <br>
@@ -20,7 +21,8 @@ $$\begin{align}
   X \perp Y \mid Z & \Leftrightarrow p(X, Y \mid Z)=p(X \mid Z) p(Y \mid Z) \\ & \Leftrightarrow p(Y \mid Z) p(X \mid Z)=p(Y, X \mid Z) \\ & \Leftrightarrow Y \perp X \mid Z 
 \end{align}$$
 </details>
-```
+
+
 
 **Decomposition:** $$X \perp Y, W \mid Z  \implies X \perp Y \mid Z \  \text{and} \ X \perp W \mid Z.$$
 
@@ -36,7 +38,8 @@ $$\begin{align}
   \end{align}$$
 </details>
 
-**Weak union:** $X \perp Y, W \mid Z  \implies X \perp Y \mid W, Z. $
+
+**Weak union:** $$X \perp Y, W \mid Z  \implies X \perp Y \mid W, Z. $$
 
 <details>
 <summary>Proof</summary>
@@ -46,7 +49,8 @@ $$\begin{align}
   \end{align}$$
 </details>
 
-**Contraction:** **$X \perp Y \mid Z \  \text{and} \ X \perp W \mid Y, Z \implies X \perp Y, W \mid Z.$**
+
+**Contraction:** $$X \perp Y \mid Z \  \text{and} \ X \perp W \mid Y, Z \implies X \perp Y, W \mid Z.$$
 
 <details>
 <summary>Proof</summary>
@@ -61,7 +65,8 @@ $$\begin{align}
 	$$
 </details>
 
-**Intersection:** $X \perp Y \mid W, Z \  \text{and} \ X \perp W \mid Y, Z \implies X \perp Y, W \mid Z.$  (Holds under strictly positive distributions)
+
+**Intersection:** $$X \perp Y \mid W, Z \  \text{and} \ X \perp W \mid Y, Z \implies X \perp Y, W \mid Z.$$  (Holds under strictly positive distributions)
 
 <details>
 <summary>Proof</summary>
