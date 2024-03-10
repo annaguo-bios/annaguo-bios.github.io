@@ -168,6 +168,98 @@ done
 
 
 
+### Check job status using `squeue`
+
+Upon submitting parallel jobs, we can check the job status with the **squeue** command. 
+
+```shell
+squeue # return status of all jobs of all users
+```
+
+Running the `squeue` command alone will display the status of all pending and running jobs across the entire cluster for all users. This provides an overview of the cluster's current workload. By examining the output, you can get an idea of how many users have submitted jobs and how many of those jobs are actively running or waiting in the queue.
+
+```shell
+squeue --job <your_job_number> # return status of jobs under <your_job_number>
+squeue -u <your_user_name> # return status of jobs under <your_user_name>
+```
+
+To narrow down the results returned by the `squeue` command and focus on specific jobs or jobs belonging to your user account, you can use the `--job` and `-u` options respectively.
+
+All the above commands will return the status of jobs via job state codes. The table below summarizes the different status codes displayed by the `squeue` command and their corresponding meanings. ([table source](https://curc.readthedocs.io/en/latest/running-jobs/squeue-status-codes.html))
+
+| Status     | Code | Explaination                                                 |
+| ---------- | :--: | ------------------------------------------------------------ |
+| COMPLETED  | `CD` | The job has completed successfully.                          |
+| COMPLETING | `CG` | The job is finishing but some processes are still active.    |
+| FAILED     | `F`  | The job terminated with a non-zero exit code and failed to execute. |
+| PENDING    | `PD` | The job is waiting for resource allocation. It will eventually run. |
+| PREEMPTED  | `PR` | The job was terminated because of preemption by another job. |
+| RUNNING    | `R`  | The job currently is allocated to a node and is running.     |
+| SUSPENDED  | `S`  | A running job has been stopped with its cores released to other jobs. |
+| STOPPED    | `ST` | A running job has been stopped with its cores retained.      |
+
+To obtain more detailed job status information and monitor the progress of jobs more effectively. Here are some additional options:
+
+1. **`--long`**: This option provides more detailed job status information beyond the basic fields.
+2. **`--start`**: When used with this option, `squeue` will return the estimated start time for pending jobs. This estimation is based on the current workload and resource availability in the cluster. Note that this estimation can be inaccurate, as new jobs with higher priorities or changes in resource availability can affect the actual start time of a pending job.
+3. **`--iterate=`**: This option allows you to automatically refresh the job status information every specified number of seconds. This feature is useful for monitoring job progress without manually re-running the command. To stop the automatic iteration, simply press `Ctrl+C`.
+
+```shell
+squeue --job <your_job_number> --long # return more detailed status info
+squeue -u <your_user_name> --start # return an estimated start time
+squeue -u <your_user_name> --start --iterate=<n_seconds> # return an estimated start time every n_seconds
+```
+
+
+
+`squeue` command has way more options than I can introduce here. The command below allows us to check all the options that `squeue` has to offer. It will open a help page that contains all the `squeue ` options along with detailed explantation. Press `q` to exit this help page.
+
+```shell
+man squeue # check all options of squeue command
+```
+
+
+
+### Cancel jobs using `scancel`
+
+Sometimes we may want to cancel the submitted jobs. `scancel` is designed for this purpose and its usage is very similar to `squeue`
+
+```shell
+scancel <your_job_number> # cancel certain job
+scancel <your_job_number1>, <your_job_number2>, <your_job_number3> # cancel multiple jobs
+scancel -u <your_user_name> # cancel all jobs from certain user
+```
+
+
+
+### Control queued and running jobs using `scontrol`
+
+To suspend a currently running job, we can use the `suspend` command. 
+
+```shell
+scontrol suspend <your_job_number>
+```
+
+This will pause the currently running job and we can resume the job with `resume`
+
+```shell
+scontrol resume <your_job_number>
+```
+
+To hold a job that is queued but not yet running, we can use the `hold` command
+
+```shell
+scontrol hold <your_job_number>
+```
+
+Different from `suspend`, this `hold` command can only be applied to jobs that is currently waiting in line and not run yet. Using the `hold` command will assign lowest priority to the job such that other jobs can be run first. To cancel this holding status, we can use the `release` command.
+
+```shell
+scontrol release <your_job_number>
+```
+
+
+
 ### Organize the results
 
 Finally, we are ready to organize the results. This step varies based on your task. In this toy example, we'd like to verify:
@@ -241,3 +333,11 @@ ggsave(filename = "dens_plot.png", plot = p.den, device = "png", width = 6, heig
 The resulting plot:
 
 {% include figure.html path="assets/img/dens_plot.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+
+
+
+### References
+
+1. [Useful Slurm commands](https://curc.readthedocs.io/en/latest/running-jobs/slurm-commands.html)
+2. [`squeue` status and reason codes](https://curc.readthedocs.io/en/latest/running-jobs/squeue-status-codes.html)
+3. [Checking the Status of a SLURM Job](https://it.stonybrook.edu/help/kb/checking-the-status-of-a-slurm-job)
