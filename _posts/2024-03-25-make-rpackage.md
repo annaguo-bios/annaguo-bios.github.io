@@ -85,6 +85,8 @@ the `cat_function()`.
 #' This function allows you to express your love of cats.
 #' @param love Do you love cats? Defaults to TRUE.
 #' @keywords cats
+#' @return A message and combination of words list
+#' @import itertools
 #' @export
 #' @examples
 #' cat_function()
