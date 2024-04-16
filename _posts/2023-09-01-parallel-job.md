@@ -48,7 +48,7 @@ save(list = c("E.x"),file = paste0("output_",n,"_",seed,".Rdata"))
 
 
 
-***Note:*** How to create the *task.R* file in linux?
+**Note:*** How to create the *task.R* file in linux?
 
 - Create a file named *task.R* with the following code
 
@@ -58,6 +58,12 @@ vim task.R
 
 - type `i` to enter the insert mode, and paste the above code.
 - press `Esc` to exit the insert mode, and type `:wq` to save and quit
+
+
+
+Upon creating the `task.R` file, we currently have one file in folder
+
+{% include figure.html path="assets/img/paralleljobs/task.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 
 
@@ -71,7 +77,9 @@ module load R
 Rscript task.R 100 10
 ```
 
-It will produce a file named `output_100_10.Rdata` .
+It will produce a file named `output_100_10.Rdata` . Now we have two files in folder
+
+{% include figure.html path="assets/img/paralleljobs/test_task.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 
 
@@ -79,7 +87,9 @@ It will produce a file named `output_100_10.Rdata` .
 
 We want to execute the `task.R` script for different sample sizes: 250, 500, 1000, 2000, and 4000. For each sample size, we intend to run `task.R` 1000 times by setting seeds from 1 to 1000.
 
-For computational efficiency, we aim to run the $5\times 100$0 jobs in **parallel**. To achieve this, first create a `.txt` file that contains all the jobs with the following R code. 
+For computational efficiency, we aim to run the $5\times 1000$ jobs in **parallel**. To achieve this, first create a `.txt` file that contains all the jobs with the following R code. For reproducibility, I'd like to write the following code in a file called `write_job.R`. We now have three files in folder
+
+{% include figure.html path="assets/img/paralleljobs/writejob.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ```R
 # sample size
@@ -100,7 +110,9 @@ for (i in seq_along(n.vec)){
 
 Usually, we don't want to submit too many jobs at a time, so I split the jobs into 5 files, named *joblist_n250.txt, joblist_n500.txt, joblist_n1000.txt, joblist_n2000.txt, joblist_n4000.txt*.
 
+To generate those `.txt` files, type `Rscript write_job.R` in the terminal, which will execute the R code contained in the `write_job.R` file.
 
+ {% include figure.html path="assets/img/paralleljobs/generate_jobs.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ### Submit parallel jobs
 
@@ -149,13 +161,21 @@ done
 
 ```
 
+Upon this step, we should have the following files in folder
+
+ {% include figure.html path="assets/img/paralleljobs/shfile.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+
 - submit the jobs one by one, so we don't abuse the cluster:)
 
 ```shell
-sbatch joblist_n250.sh
+sbatch joblist_n1.sh
 ```
 
-if you want to submit all the jobs at once:
+ {% include figure.html path="assets/img/paralleljobs/submit_job.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+
+The above screenshot shows that we have successfully submitted the bash job `joblist_n1.sh` and the submission id is `19998977`. `squeue -j 19998977` helps check the current status of this job, and the `PD` in the `ST` means the jobs are queued and awaiting execution; they have not commenced running yet. 
+
+if we want to submit all the jobs at once:
 
 ```shell
 ##########################
@@ -332,7 +352,7 @@ ggsave(filename = "dens_plot.png", plot = p.den, device = "png", width = 6, heig
 
 The resulting plot:
 
-{% include figure.html path="assets/img/dens_plot.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+{% include figure.html path="assets/img/paralleljobs/dens_plot.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 
 
