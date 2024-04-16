@@ -86,7 +86,7 @@ the `cat_function()`.
 #' @param love Do you love cats? Defaults to TRUE.
 #' @keywords cats
 #' @return A message and combination of words list
-#' @import itertools
+#' @importFrom itertools combn
 #' @export
 #' @examples
 #' cat_function()
@@ -109,7 +109,7 @@ the documentation files `cat_function.Rd`.
 ### Step 5: Add vignettes
 
 ``` r
-devtools::use_vignette("introduction")
+usethis::use_vignette("introduction")
 ```
 
 ### Step 5 (optional): Add a github readme file
@@ -140,7 +140,8 @@ opts_chunk$set(warning = FALSE, message = FALSE, eval=F)
 ### Step 6: Install the package
 
 ``` r
-devtools::install()
+devtools::install() # install the package
+devtools::build() # build the package as an zip file
 ```
 
 OR make the package folder a git repository and install the package

@@ -67,7 +67,7 @@ Upon creating the `task.R` file, we currently have one file in folder
 
 
 
-To test the code, let $n=100$ and $seed=10$. Run the following code:
+To test the code, let $$n=100$$ and $$seed=10$$. Run the following code:
 
 ```shell
 # load R
@@ -87,7 +87,7 @@ It will produce a file named `output_100_10.Rdata` . Now we have two files in fo
 
 We want to execute the `task.R` script for different sample sizes: 250, 500, 1000, 2000, and 4000. For each sample size, we intend to run `task.R` 1000 times by setting seeds from 1 to 1000.
 
-For computational efficiency, we aim to run the $5\times 1000$ jobs in **parallel**. To achieve this, first create a `.txt` file that contains all the jobs with the following R code. For reproducibility, I'd like to write the following code in a file called `write_job.R`. We now have three files in folder
+For computational efficiency, we aim to run the $$5\times 1000$$ jobs in **parallel**. To achieve this, first create a `.txt` file that contains all the jobs with the following R code. For reproducibility, I'd like to write the following code in a file called `write_job.R`. We now have three files in folder
 
 {% include figure.html path="assets/img/paralleljobs/writejob.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
@@ -112,7 +112,7 @@ Usually, we don't want to submit too many jobs at a time, so I split the jobs in
 
 To generate those `.txt` files, type `Rscript write_job.R` in the terminal, which will execute the R code contained in the `write_job.R` file.
 
- {% include figure.html path="assets/img/paralleljobs/generate_jobs.png" class="img-fluid rounded z-depth-1" zoomable=true %}
+ {% include figure.html path="assets/img/paralleljobs/generate_job.png" class="img-fluid rounded z-depth-1" zoomable=true %}
 
 ### Submit parallel jobs
 
