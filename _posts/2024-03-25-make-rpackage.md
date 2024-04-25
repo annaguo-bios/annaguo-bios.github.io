@@ -140,7 +140,7 @@ can add the following line to the `.Rbuildignore` file:
 ### Step 5: Add vignettes
 
 ``` r
-devtools::use_vignette("introduction")
+usethis::use_vignette("introduction")
 ```
 
 ### Step 5 (optional): Add a github readme file
