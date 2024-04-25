@@ -19,6 +19,8 @@ toc:
 - [Step 2: Create a function](#step-2-create-a-function)
 - [Step 3: Add package dependencies](#step-3-add-package-dependencies)
 - [Step 4: Add documentation](#step-4-add-documentation)
+- [Step 4 (optional): Include a binary
+  data](#step-4-optional-include-a-binary-data)
 - [Step 5: Add vignettes](#step-5-add-vignettes)
 - [Step 5 (optional): Add a github readme
   file](#step-5-optional-add-a-github-readme-file)
@@ -37,11 +39,11 @@ library("roxygen2")
 
 ### Step 1: Create your package directory
 
-Travel to the parent folder where you want to create your package via `setwd`. Then
-run `create` to create a R project:
+Travel to the parent folder where you want to create your package. Then
+run the following code:
 
 ``` r
-setwd("path-to-parent_directory")
+setwd("parent_directory")
 create("test.package")
 ```
 
@@ -85,8 +87,6 @@ the `cat_function()`.
 #' This function allows you to express your love of cats.
 #' @param love Do you love cats? Defaults to TRUE.
 #' @keywords cats
-#' @return A message and combination of words list
-#' @importFrom itertools combn
 #' @export
 #' @examples
 #' cat_function()
@@ -106,10 +106,41 @@ cat_function <- function(love=TRUE){
 Once the documentation is added, run `devtools::document()` to generate
 the documentation files `cat_function.Rd`.
 
+### Step 4 (optional): Include a binary data
+
+Sometimes we may like to include binary data in the package such that
+the data is readily available to the users once they installed the
+package. The data can be used for testing out the functions in the
+package or work as an example for the format of the data that the
+functions accept. To do this, we can create a R script say `data.R`,
+within wich we include the scripts used to generate the binary data. For
+example,
+
+``` r
+testdata <- rnorm(100)
+
+devtools::use_data(testdata)
+```
+
+We first generate the binary data called `testdata`. Then we use the
+`use_data()` function to include the data in the package. This will
+create a `data` folder in the package directory and store the binary
+data called `testdata.rda` in the `data` folder.
+
+We may also want to make the script `data.R` accessible to the users. To
+do this, we can create a folder called `data-raw` in the package
+directory and store the `data.R` script in the `data-raw` folder. If we
+don’t want to include the `data.R` script when building the package, we
+can add the following line to the `.Rbuildignore` file:
+
+``` bash
+^data-raw$
+```
+
 ### Step 5: Add vignettes
 
 ``` r
-usethis::use_vignette("introduction")
+devtools::use_vignette("introduction")
 ```
 
 ### Step 5 (optional): Add a github readme file
@@ -140,8 +171,7 @@ opts_chunk$set(warning = FALSE, message = FALSE, eval=F)
 ### Step 6: Install the package
 
 ``` r
-devtools::install() # install the package
-devtools::build() # build the package as an zip file
+devtools::install()
 ```
 
 OR make the package folder a git repository and install the package
