@@ -117,7 +117,7 @@ within wich we include the scripts used to generate the binary data. For
 example,
 
 ``` r
-testdata <- rnorm(100)
+testdata <- data.frame(x=rnorm(10,0,1), y=rbinom(10,1,0.5))
 
 devtools::use_data(testdata)
 ```
@@ -137,11 +137,39 @@ can add the following line to the `.Rbuildignore` file:
 ^data-raw$
 ```
 
+
+
+It's a good practice to document the binary data generated above such that when users explore the package with the data, they know what each variable mean. To document the data, we can create an R script named `document_data.R` under the `R` folder. Within the script, we can include the following 
+
+```R
+#' This is a toy dataset
+#'
+#'
+#' @format A data frame with 10 rows and 2 variables: x, y.
+#' \describe{
+#'  \item{x}{a variable that follows normal distribution}
+#'  \item{y}{a binary variable}
+#'  }
+
+#' @name testdata
+#' @docType data
+#' @keywords data
+"testdata"
+```
+
+
+
+
+
+
+
 ### Step 5: Add vignettes
 
 ``` r
 usethis::use_vignette("introduction")
 ```
+
+
 
 ### Step 5 (optional): Add a github readme file
 
@@ -168,13 +196,23 @@ library(knitr)
 opts_chunk$set(warning = FALSE, message = FALSE, eval=F)
 ```
 
-### Step 6: Install the package
+### Step 6: Check and install the package
+
+Before building the package, it's a good practice to check if there is any error or warning associated with the package. To do this, we can use the `check()` function
+
+```R
+devtools::check()
+```
+
+
+
+Upon addressing all the errors, we can install the package via
 
 ``` r
 devtools::install()
 ```
 
-OR make the package folder a git repository and install the package
+*OR* make the package folder a git repository and install the package
 using the following code:
 
 ``` bash
