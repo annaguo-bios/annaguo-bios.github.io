@@ -1,0 +1,86 @@
+@article{guo2024average,
+  title={Average Causal Effect Estimation in DAGs with Hidden Variables: Extensions of Back-Door and Front-Door Criteria},
+  author={Guo, Anna and Nabi, Razieh},
+  journal={arXiv preprint arXiv:2409.03962},
+  year={2024},
+abstract = {The identification theory for causal effects in directed acyclic graphs (DAGs) with hidden variables is well-developed, but methods for estimating and inferring functionals beyond the g-formula remain limited. Previous studies have proposed semiparametric estimators for identifiable functionals in a broad class of DAGs with hidden variables. While demonstrating double robustness in some models, existing estimators face challenges, particularly with density estimation and numerical integration for continuous variables, and their estimates may fall outside the parameter space of the target estimand. Their asymptotic properties are also underexplored, especially when using flexible statistical and machine learning models for nuisance estimation. This study addresses these challenges by introducing novel one-step corrected plug-in and targeted minimum loss-based estimators of causal effects for a class of DAGs that extend classical back-door and front-door criteria (known as the treatment primal fixability criterion in prior literature). These estimators leverage machine learning to minimize modeling assumptions while ensuring key statistical properties such as asymptotic linearity, double robustness, efficiency, and staying within the bounds of the target parameter space. We establish conditions for nuisance functional estimates in terms of L2(P)-norms to achieve root-n consistent causal effect estimates. To facilitate practical application, we have developed the flexCausal package in R.},
+selected={true},
+html={https://arxiv.org/abs/2409.03962},
+pdf={2024_Guo_primal.pdf},
+poster={2024_Guo_primal_poster.pdf}
+}
+
+@article{guo2023sufficient,
+  title={Sufficient Identification Conditions and Semiparametric Estimation under Missing Not at Random Mechanisms},
+  author={Guo, Anna and Zhao, Jiwei and Nabi, Razieh},
+  journal={Uncertainty in Artificial Intelligence},
+  year={2023},
+abstract = {Conducting valid statistical analyses is challenging in the presence of missing-not-at-random (MNAR) data, where the missingness mechanism is dependent on the missing values themselves even conditioned on the observed data. Here, we consider a MNAR model that generalizes several prior popular MNAR models in two ways: first, it is less restrictive in terms of statistical independence assumptions imposed on the underlying joint data distribution, and second, it allows for all variables in the observed sample to have missing values. This MNAR model corresponds to a so-called criss-cross structure considered in the literature on graphical models of missing data that prevents nonparametric identification of the entire missing data model. Nonetheless, part of the complete-data distribution remains nonparametrically identifiable. By exploiting this fact and considering a rich class of exponential family distributions, we establish sufficient conditions for identification of the complete-data distribution as well as the entire missingness mechanism. We then propose methods for testing the independence restrictions encoded in such models using odds ratio as our parameter of interest. We adopt two semiparametric approaches for estimating the odds ratio parameter and establish the corresponding asymptotic theories: one involves maximizing a conditional likelihood with order statistics and the other uses estimating equations. The utility of our methods is illustrated via simulation studies.},
+selected={true},
+html={https://proceedings.mlr.press/v216/guo23a.html},
+pdf={2023_Guo_MNAR.pdf},
+abbr={UAI},
+poster={2023_Guo_MNAR_poster.pdf}
+}
+
+@article{guo2023targeted,
+  title={Targeted Machine Learning for Average Causal Effect Estimation Using the Front-Door Functional},
+  author={Guo, Anna and Benkeser, David and Nabi, Razieh},
+  journal={arXiv preprint arXiv:2312.10234},
+  year={2023},
+abstract = {Evaluating the average causal effect (ACE) of a treatment on an outcome often involves overcoming the challenges posed by confounding factors in observational studies. A traditional approach uses the back-door criterion, seeking adjustment sets to block confounding paths between treatment and outcome. However, this method struggles with unmeasured confounders. As an alternative, the front-door criterion offers a solution, even in the presence of unmeasured confounders between treatment and outcome. This method relies on identifying mediators that are not directly affected by these confounders and that completely mediate the treatment's effect. Here, we introduce novel estimation strategies for the front-door criterion based on the targeted minimum loss-based estimation theory. Our estimators work across diverse scenarios, handling binary, continuous, and multivariate mediators. They leverage data-adaptive machine learning algorithms, minimizing assumptions and ensuring key statistical properties like asymptotic linearity, double-robustness, efficiency, and valid estimates within the target parameter space. We establish conditions under which the nuisance functional estimations ensure the root n-consistency of ACE estimators. Our numerical experiments show the favorable finite sample performance of the proposed estimators. We demonstrate the applicability of these estimators to analyze the effect of early stage academic performance on future yearly income using data from the Finnish Social Science Data Archive.},
+selected={true},
+html={https://arxiv.org/abs/2312.10234},
+pdf={2023_Guo_TMLE.pdf},
+poster={2023_Guo_TMLE_poster.pdf},
+slides={2023_Guo_TMLE_slides.pdf}
+}
+
+@article{zang_trajectories_2022,
+	title = {Trajectories of {General} {Health} {Status} and {Depressive} {Symptoms} {Among} {Persons} {With} {Cognitive} {Impairment} in the {United} {States}},
+	volume = {34},
+	issn = {0898-2643, 1552-6887},
+	url = {http://journals.sagepub.com/doi/10.1177/08982643211060948},
+	doi = {10.1177/08982643211060948},
+	abstract = {Objectives
+            To identify and examine heterogeneous trajectories of general health status (GHS) and depressive symptoms (DS) among persons with cognitive impairment (PCIs). Methods: We use group-based trajectory models to study 2361 PCIs for GHS and 1927 PCIs for DS from the National Health and Aging Trends Survey 2011–2018, and apply multinomial logistic regressions to predict identified latent trajectory group memberships using individual characteristics. Results: For both GHS and DS, there were six groups of PCIs with distinct trajectories over a 7-year period. More than 40\% PCIs experienced sharp declines in GHS, and 35.5\% experienced persistently poor GHS. There was greater heterogeneity in DS trajectories with 55\% PCIs experiencing improvement, 16.4\% experiencing persistently high DS, and 30.5\% experiencing deterioration. Discussion: The GHS trajectories illustrate the heavy burden of poor and declining health among PCIs. Further research is needed to understand the factors underlying stable or improving DS despite declining GHS},
+	language = {en},
+	number = {4-5},
+	urldate = {2022-10-21},
+	journal = {Journal of Aging and Health},
+	author = {Zang, Emma and Guo, Anna and Pao, Christina and Lu, Nancy and Wu, Bei and Fried, Terri R.},
+	month = aug,
+	year = {2022},
+	pages = {720--735},
+	file = {Zang et al. - 2022 - Trajectories of General Health Status and Depressi.pdf:/Users/apple/Zotero/storage/8CLCY89W/Zang et al. - 2022 - Trajectories of General Health Status and Depressi.pdf:application/pdf},
+html={https://journals.sagepub.com/doi/abs/10.1177/08982643211060948},
+pdf={2022_Zang_traj.pdf},
+selected={true}
+}
+
+@article{zang_impacts_2023,
+	title = {Impacts of the {COVID}‐19 {Lockdown} on {Gender} {Inequalities} in {Time} {Spent} on {Paid} and {Unpaid} {Work} in {Singapore}},
+	issn = {0098-7921, 1728-4457},
+	url = {https://onlinelibrary.wiley.com/doi/10.1111/padr.12554},
+	doi = {10.1111/padr.12554},
+	language = {en},
+	urldate = {2023-03-16},
+	journal = {Population and Development Review},
+	author = {Zang, Emma and Tan, Poh Lin and Lyttelton, Thomas and Guo, Anna},
+	month = mar,
+	year = {2023},
+	pages = {padr.12554},
+	file = {Zang et al. - 2023 - Impacts of the COVID‐19 Lockdown on Gender Inequal.pdf:/Users/apple/Zotero/storage/H3JJ7BR6/Zang et al. - 2023 - Impacts of the COVID‐19 Lockdown on Gender Inequal.pdf:application/pdf},
+abstract = {Objective: To examine the impact of the COVID-19 lockdown on gender inequalities in time spent on paid labor market work, housework, and childcare in Singapore.
+
+Background: Widespread shifts to remote work, school closures, and job losses arising from the COVID-19 pandemic have affected gender inequalities in time spent on paid and unpaid work globally. Major gaps in the literature include a lack of longitudinal data to compare time use before and during the pandemic, a lack of examination of how gender and family resources intersect to create inequalities in time use during the pandemic, and a lack of focus on potential mechanisms through which the pandemic affects time use patterns across genders. 
+
+Method: We use a panel dataset of 290 married women interviewed before, during, and after the COVID-19 lockdown, and apply between-within models to examine changes in gender gaps in time use (defined as females’ time use minus males’ in this study). 
+
+Results: Gender gaps in housework hours increased during and persisted after the lockdown, even as the negative gender gap in paid work hours narrowed. The gap in childcare hours expanded among households with fewer resources but decreased among households with more resources. We also find that gender ideologies and resources may have both played important roles in how the pandemic affects gender inequalities in time use.
+
+Conclusion: Our results highlight that gender and resources can interact, putting women in a vulnerable position when a pandemic strikes, especially among less-resourced households.},
+html={https://onlinelibrary.wiley.com/doi/abs/10.1111/padr.12554},
+pdf={2023_Zang_Covid.pdf},
+selected={true}
+}
