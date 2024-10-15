@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: <a href='https://scholar.google.com/citations?user=9sUhi8MAAAAJ&hl=en&oi=ao'>Google Scholar</a>
+subtitle: <a href='https://scholar.google.com/citations?user=9sUhi8MAAAAJ&hl=en&oi=ao'>Google Scholar</a> | <a href='https://github.com/annaguo-bios'>GitHub</a> | <a href='https://x.com/AnnaGuo617'>X</a>
 
 profile:
   align: right
