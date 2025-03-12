@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Make R package
+title: Make an R package
 date: 2024-03-25 09:56:00-0400
 description: detailed implementation see GitHub repo test.package
 tags: code
