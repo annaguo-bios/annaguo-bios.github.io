@@ -2,6 +2,7 @@
 layout: post
 title: An R Package for Causal Effect Estimation via the Front-Door Functional
 date: 2026-06-18 09:56:00-0400
+permalink: /posts/2026-06-18-frontdoor/
 description: front-door model ATE and ATT estimation
 tags: packages
 categories: packages
