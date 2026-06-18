@@ -7,14 +7,46 @@ nav: true
 nav_order: 3
 ---
 
-{% assign flexCausal = site.posts | where_exp: "post", "post.path contains '2026-06-18-primal.md'" | first %}
-{% assign flexMissing = site.posts | where_exp: "post", "post.path contains '2026-06-18-mtree.md'" | first %}
-{% assign fdcausal = site.posts | where_exp: "post", "post.path contains '2026-06-18-frontdoor.md'" | first %}
-{% assign napkincausal = site.posts | where_exp: "post", "post.path contains '2026-06-18-napkin.md'" | first %}
+<style>
+  .packages-intro {
+    border-top: 1px solid var(--global-divider-color);
+    border-bottom: 1px solid var(--global-divider-color);
+    font-style: italic;
+    margin: 2rem 0;
+    padding: 1rem 0;
+  }
 
-<ul>
-  <li><a href="{{ flexCausal.url | relative_url }}">flexCausal</a> [<a href="https://github.com/annaguo-bios/flexCausal">github</a>] [<a href="https://CRAN.R-project.org/package=flexCausal">CRAN</a>]: {{ flexCausal.title }}</li>
-  <li><a href="{{ flexMissing.url | relative_url }}">flexMissing</a> [<a href="https://github.com/annaguo-bios/flexMissing">github</a>]: {{ flexMissing.title }}</li>
-  <li><a href="{{ fdcausal.url | relative_url }}">fdcausal</a> [<a href="https://github.com/annaguo-bios/fdcausal">github</a>]: {{ fdcausal.title }}</li>
-  <li><a href="{{ napkincausal.url | relative_url }}">napkincausal</a> [<a href="https://github.com/annaguo-bios/napkincausal">github</a>]: {{ napkincausal.title }}</li>
+  .packages-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .packages-list li {
+    margin-bottom: 1.1rem;
+  }
+
+  .packages-list .package-name {
+    font-weight: 700;
+  }
+
+  .packages-list .package-meta {
+    margin-left: 0.55rem;
+    white-space: nowrap;
+  }
+
+  .packages-list .package-meta + .package-meta {
+    margin-left: 0.4rem;
+  }
+</style>
+
+<div class="packages-intro">
+  We try our best to pair each methodological paper with a practical, well-documented tool that has been tested through the paper’s experiments, so that the method can move beyond theory and support real-world practice.
+</div>
+
+<ul class="packages-list">
+  <li><a class="package-name" href="{{ '/blog/2026/primal/' | relative_url }}">flexCausal</a><span class="package-meta">[<a href="https://github.com/annaguo-bios/flexCausal">github</a>]</span><span class="package-meta">[<a href="https://CRAN.R-project.org/package=flexCausal">CRAN</a>]</span>: <a href="{{ '/blog/2026/primal/' | relative_url }}">Causal Effect Estimation in Graphical Models with Unmeasured Variables</a></li>
+  <li><a class="package-name" href="{{ '/blog/2026/mtree/' | relative_url }}">flexMissing</a><span class="package-meta">[<a href="https://github.com/annaguo-bios/flexMissing">github</a>]</span>: <a href="{{ '/blog/2026/mtree/' | relative_url }}">An R Package for Target/Full Law Identification and Imputation in Given Missing Data mDAGs</a></li>
+  <li><a class="package-name" href="{{ '/blog/2026/frontdoor/' | relative_url }}">fdcausal</a><span class="package-meta">[<a href="https://github.com/annaguo-bios/fdcausal">github</a>]</span>: <a href="{{ '/blog/2026/frontdoor/' | relative_url }}">An R Package for Causal Effect Estimation via the Front-Door Functional</a></li>
+  <li><a class="package-name" href="{{ '/blog/2026/napkin/' | relative_url }}">napkincausal</a><span class="package-meta">[<a href="https://github.com/annaguo-bios/napkincausal">github</a>]</span>: <a href="{{ '/blog/2026/napkin/' | relative_url }}">An R Package for Causal Effect Estimation in the Napkin Graph</a></li>
 </ul>
